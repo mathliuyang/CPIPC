@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {\bfseries 1.}问题重述}{3}{section.1}%
+\contentsline {section}{\numberline {\bfseries 2.}问题分析}{4}{section.2}%
+\contentsline {section}{\numberline {\bfseries 3.}模型假设}{5}{section.3}%
+\contentsline {section}{\numberline {\bfseries 4.}符号说明}{6}{section.4}%
+\contentsline {section}{\numberline {\bfseries 5.}模型建立与求解}{7}{section.5}%
+\contentsline {section}{\numberline {\bfseries 6.}模型评价与拓展}{8}{section.6}%
+\contentsline {subsection}{\numberline {\bfseries 6.\bfseries 1}模型评价}{8}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {\bfseries 6.\bfseries 1.\bfseries 1}模型优势}{8}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {\bfseries 6.\bfseries 1.\bfseries 2}模型局限}{8}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {\bfseries 6.\bfseries 2}模型拓展与前景}{8}{subsection.6.2}%
+\contentsline {section}{参考文献}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {附录A}主程序源代码}{10}{appendix.A}%
+\contentsline {subsection}{\numberline {\bfseries 1.\bfseries 1}\texttt {DirectedGraphVisualization.m}}{10}{subsection.A.1}%
+\contentsfinish 

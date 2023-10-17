@@ -1,0 +1,57 @@
+
+%--------------------附录----------------------
+\newpage
+
+\appendix
+
+\section{主程序源代码}
+
+\subsection{\texttt{DirectedGraphVisualization.m}}\label{sec A 4}
+这段代码主要用于生成一个有向图并进行可视化。
+\begin{lstlisting}[style=matlab,basicstyle=\footnotesize\fontspec{Courier New},title={DirectedGraphVisualization.m}]  
+    % 设置随机数生成器的种子以获得可重复的结果
+    rng(3);
+    
+    % 定义节点数量
+    numNodes = 5;
+    
+    % 随机生成边（每个节点都可以连接到其他节点，但不包括自己）
+    s = repmat(1:numNodes, 1, numNodes);
+    t = repmat(1:numNodes, numNodes, 1);
+    s = s(:)';
+    t = t(:)';
+    
+    % 删除自连接的边
+    selfLoops = s == t;
+    s(selfLoops) = [];
+    t(selfLoops) = [];
+    
+    % 随机生成边的权重和节点的权重
+    edgeWeights = round((0.01 + (1-0.01)*rand(1, length(s))) * 100) / 100;
+    nodeWeights = randi([20, 50], 1, numNodes);
+    
+    % 使用边和权重创建有向图对象
+    G = digraph(s,t,edgeWeights);
+    
+    % 绘制有向图，并明确不显示节点标签
+    h = plot(G, 'EdgeLabel', G.Edges.Weight, 'LineWidth', 2, 'ArrowSize', 10, 'NodeFontSize', 12, 'NodeColor', Color_Nature(1,:), 'EdgeColor', Color_Nature(2,:), 'EdgeAlpha', 0.7, 'ArrowPosition', 0.6, 'NodeLabel', {});
+    
+    % 使用节点的权重来调整节点的大小
+    h.MarkerSize = nodeWeights;
+    
+    % 获取节点的坐标
+    x = h.XData;
+    y = h.YData;
+    
+    % 添加编号到节点的中心
+    labels = arrayfun(@(x) num2str(x), 1:numNodes, 'UniformOutput', false);
+    for i = 1:numNodes
+        text(x(i), y(i), labels{i}, ...
+            'HorizontalAlignment', 'center', ...
+            'VerticalAlignment', 'middle', ...
+            'Color', Color_Nature(3,:), ...
+            'FontSize', 14, ...  % 设置字体大小，您可以根据需要调整
+            'FontWeight', 'bold');  % 设置为加粗
+    end
+
+\end{lstlisting}
